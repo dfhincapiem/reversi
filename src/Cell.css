@@ -1,0 +1,435 @@
+
+
+.Cell{
+    height : 46px;
+    width : 46px;
+    display : inline-block;
+    color : white;
+    margin : 2px 3px 2px 4px;
+    cursor : pointer;
+    border-radius: 5%;
+
+}
+.CellAnimation{
+/*-webkit-animation: show2 1.88s step-end, pulse 0.88s linear infinite alternate;*/
+animation: show3 1.88s step-end, pulse 0.88s linear infinite alternate;
+}
+
+.CellAnimation3{
+  /*  -webkit-animation: show2 1.88s step-end , pulse 0.88s linear infinite alternate;*/
+    background: rgb(0, 144, 0);
+    animation: show4 0.80s step-end, pulse 0.88s linear infinite alternate;;
+  }
+    
+
+.White {
+    width: 100%;
+    height: 100%;
+    border: 10px solid White;
+    border-radius: 100%;
+    box-shadow: 3px 3px 3px -2px #000;
+}
+
+
+.Black {
+    width: 100%;
+    height: 100%;
+    border: 10px solid black;
+    border-radius: 100%;
+    box-shadow: 3px 3px 3px -2px #000;
+}
+
+.CellHover {
+    width: 100%;
+    height: 100%;
+    border: 10px solid rgb(146, 146, 146);
+    border-radius: 100%;
+    box-shadow: 3px 3px 3px -2px #000;
+}
+
+
+
+
+    @-webkit-keyframes show3 {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    @keyframes show3 {
+      0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @-webkit-keyframes show4 {
+        0% {
+          opacity: 1;
+          
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes show4 {
+          0% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+  
+
+
+  @-webkit-keyframes pulse {
+    from,
+    40% {
+      background: #fdfdfd;
+    }
+    to {
+      background: #dadada;
+    }
+  }
+  @keyframes pulse {
+    from,
+    40% {
+      background: rgb(0, 144, 0);
+    }
+    to {
+      background: rgb(0, 165, 0);
+    }
+  }
+
+  .Cell:nth-child(1) {
+    -webkit-animation-delay: 0.52s;
+    animation-delay: 0.52s;
+  }
+  
+  .Cell:nth-child(2) {
+    -webkit-animation-delay: 0.455s;
+    animation-delay: 0.455s;
+  }
+  
+  .Cell:nth-child(3) {
+    -webkit-animation-delay: 0.325s;
+    animation-delay: 0.325s;
+  }
+  
+  .Cell:nth-child(4) {
+    -webkit-animation-delay: 0.065s;
+    animation-delay: 0.065s;
+  }
+  
+  .Cell:nth-child(5) {
+    -webkit-animation-delay: 0.195s;
+    animation-delay: 0.195s;
+  }
+  
+  .Cell:nth-child(6) {
+    -webkit-animation-delay: 0.13s;
+    animation-delay: 0.13s;
+  }
+  
+  .Cell:nth-child(7) {
+    -webkit-animation-delay: 0.13s;
+    animation-delay: 0.13s;
+  }
+  
+  .Cell:nth-child(8) {
+    -webkit-animation-delay: 0.325s;
+    animation-delay: 0.325s;
+  }
+  
+  .Cell:nth-child(9) {
+    -webkit-animation-delay: 0.585s;
+    animation-delay: 0.585s;
+  }
+  
+  .Cell:nth-child(10) {
+    -webkit-animation-delay: 0.195s;
+    animation-delay: 0.195s;
+  }
+  
+  .Cell:nth-child(11) {
+    -webkit-animation-delay: 0.13s;
+    animation-delay: 0.13s;
+  }
+  
+  .Cell:nth-child(12) {
+    -webkit-animation-delay: 0.39s;
+    animation-delay: 0.39s;
+  }
+  
+  .Cell:nth-child(13) {
+    -webkit-animation-delay: 0.52s;
+    animation-delay: 0.52s;
+  }
+  
+  .Cell:nth-child(14) {
+    -webkit-animation-delay: 0.195s;
+    animation-delay: 0.195s;
+  }
+  
+  .Cell:nth-child(15) {
+    -webkit-animation-delay: 0.195s;
+    animation-delay: 0.195s;
+  }
+  
+  .Cell:nth-child(16) {
+    -webkit-animation-delay: 0.325s;
+    animation-delay: 0.325s;
+  }
+  
+  .Cell:nth-child(17) {
+    -webkit-animation-delay: 0.195s;
+    animation-delay: 0.195s;
+  }
+  
+  .Cell:nth-child(18) {
+    -webkit-animation-delay: 0.39s;
+    animation-delay: 0.39s;
+  }
+  
+  .Cell:nth-child(19) {
+    -webkit-animation-delay: 0.65s;
+    animation-delay: 0.65s;
+  }
+  
+  .Cell:nth-child(20) {
+    -webkit-animation-delay: 0.065s;
+    animation-delay: 0.065s;
+  }
+  
+  .Cell:nth-child(21) {
+    -webkit-animation-delay: 0.325s;
+    animation-delay: 0.325s;
+  }
+  
+  .Cell:nth-child(22) {
+    -webkit-animation-delay: 0.26s;
+    animation-delay: 0.26s;
+  }
+  
+  .Cell:nth-child(23) {
+    -webkit-animation-delay: 0.065s;
+    animation-delay: 0.065s;
+  }
+  
+  .Cell:nth-child(24) {
+    -webkit-animation-delay: 0.39s;
+    animation-delay: 0.39s;
+  }
+  
+  .Cell:nth-child(25) {
+    -webkit-animation-delay: 0.39s;
+    animation-delay: 0.39s;
+  }
+  
+  .Cell:nth-child(26) {
+    -webkit-animation-delay: 0.65s;
+    animation-delay: 0.65s;
+  }
+  
+  .Cell:nth-child(27) {
+    -webkit-animation-delay: 0.455s;
+    animation-delay: 0.455s;
+  }
+  
+  .Cell:nth-child(28) {
+    -webkit-animation-delay: 0.65s;
+    animation-delay: 0.65s;
+  }
+  
+  .Cell:nth-child(29) {
+    -webkit-animation-delay: 0.455s;
+    animation-delay: 0.455s;
+  }
+  
+  .Cell:nth-child(30) {
+    -webkit-animation-delay: 0.455s;
+    animation-delay: 0.455s;
+  }
+  
+  .Cell:nth-child(31) {
+    -webkit-animation-delay: 0.065s;
+    animation-delay: 0.065s;
+  }
+  
+  .Cell:nth-child(32) {
+    -webkit-animation-delay: 0.065s;
+    animation-delay: 0.065s;
+  }
+  
+  .Cell:nth-child(33) {
+    -webkit-animation-delay: 0.325s;
+    animation-delay: 0.325s;
+  }
+  
+  .Cell:nth-child(34) {
+    -webkit-animation-delay: 0.13s;
+    animation-delay: 0.13s;
+  }
+  
+  .Cell:nth-child(35) {
+    -webkit-animation-delay: 0.52s;
+    animation-delay: 0.52s;
+  }
+  
+  .Cell:nth-child(36) {
+    -webkit-animation-delay: 0.65s;
+    animation-delay: 0.65s;
+  }
+  
+  .Cell:nth-child(37) {
+    -webkit-animation-delay: 0.26s;
+    animation-delay: 0.26s;
+  }
+  
+  .Cell:nth-child(38) {
+    -webkit-animation-delay: 0.195s;
+    animation-delay: 0.195s;
+  }
+  
+  .Cell:nth-child(39) {
+    -webkit-animation-delay: 0.065s;
+    animation-delay: 0.065s;
+  }
+  
+  .Cell:nth-child(40) {
+    -webkit-animation-delay: 0.455s;
+    animation-delay: 0.455s;
+  }
+  
+  .Cell:nth-child(41) {
+    -webkit-animation-delay: 0.65s;
+    animation-delay: 0.65s;
+  }
+  
+  .Cell:nth-child(42) {
+    -webkit-animation-delay: 0.585s;
+    animation-delay: 0.585s;
+  }
+  
+  .Cell:nth-child(43) {
+    -webkit-animation-delay: 0.585s;
+    animation-delay: 0.585s;
+  }
+  
+  .Cell:nth-child(44) {
+    -webkit-animation-delay: 0.39s;
+    animation-delay: 0.39s;
+  }
+  
+  .Cell:nth-child(45) {
+    -webkit-animation-delay: 0.325s;
+    animation-delay: 0.325s;
+  }
+  
+  .Cell:nth-child(46) {
+    -webkit-animation-delay: 0.65s;
+    animation-delay: 0.65s;
+  }
+  
+  .Cell:nth-child(47) {
+    -webkit-animation-delay: 0.455s;
+    animation-delay: 0.455s;
+  }
+  
+  .Cell:nth-child(48) {
+    -webkit-animation-delay: 0.455s;
+    animation-delay: 0.455s;
+  }
+  
+  .Cell:nth-child(49) {
+    -webkit-animation-delay: 0.585s;
+    animation-delay: 0.585s;
+  }
+  
+  .Cell:nth-child(50) {
+    -webkit-animation-delay: 0.585s;
+    animation-delay: 0.585s;
+  }
+  
+  .Cell:nth-child(51) {
+    -webkit-animation-delay: 0.13s;
+    animation-delay: 0.13s;
+  }
+  
+  .Cell:nth-child(52) {
+    -webkit-animation-delay: 0.065s;
+    animation-delay: 0.065s;
+  }
+  
+  .Cell:nth-child(53) {
+    -webkit-animation-delay: 0.065s;
+    animation-delay: 0.065s;
+  }
+  
+  .Cell:nth-child(54) {
+    -webkit-animation-delay: 0.325s;
+    animation-delay: 0.325s;
+  }
+  
+  .Cell:nth-child(55) {
+    -webkit-animation-delay: 0.065s;
+    animation-delay: 0.065s;
+  }
+  
+  .Cell:nth-child(56) {
+    -webkit-animation-delay: 0.455s;
+    animation-delay: 0.455s;
+  }
+  
+  .Cell:nth-child(57) {
+    -webkit-animation-delay: 0.39s;
+    animation-delay: 0.39s;
+  }
+  
+  .Cell:nth-child(58) {
+    -webkit-animation-delay: 0.325s;
+    animation-delay: 0.325s;
+  }
+  
+  .Cell:nth-child(59) {
+    -webkit-animation-delay: 0.065s;
+    animation-delay: 0.065s;
+  }
+  
+  .Cell:nth-child(60) {
+    -webkit-animation-delay: 0.52s;
+    animation-delay: 0.52s;
+  }
+  
+  .Cell:nth-child(61) {
+    -webkit-animation-delay: 0.195s;
+    animation-delay: 0.195s;
+  }
+  
+  .Cell:nth-child(62) {
+    -webkit-animation-delay: 0.65s;
+    animation-delay: 0.65s;
+  }
+  
+  .Cell:nth-child(63) {
+    -webkit-animation-delay: 0.195s;
+    animation-delay: 0.195s;
+  }
+  
+  .Cell:nth-child(64) {
+    -webkit-animation-delay: 0.065s;
+    animation-delay: 0.065s;
+  }
+  
+

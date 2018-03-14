@@ -1,0 +1,99 @@
+
+@import "compass/css3";
+
+
+
+$blockSize: 2em;
+//$blockSize: 6vmin; // Try this in Firefox! Viewport based size, which doesn't work in Canary at the moment
+
+// Play with these to see what you get
+$delay: .065s;
+$duration: .88s;
+$startingColor: #fdfdfd;
+$endingColor: #dadada;
+
+// Calculate some values
+$blockMargin: $blockSize / 9;
+$loaderSize: $blockSize 9  + $blockMargin * 2;
+
+@mixin animation-delay( $delay ) {
+  -webkit-animation-delay: $delay;
+  animation-delay: $delay;
+}
+
+// Official syntax supported by IE10, FF16, Opera 12.1,
+// so we're only going to add the webkit prefix
+@mixin animation( $ani1:null, $ani2:null ) {
+  @if ($ani2 != null) {
+    -webkit-animation: $ani1, $ani2;
+    animation: $ani1, $ani2;
+  }
+  
+  @else if ($ani1 != null) {
+    -webkit-animation: $ani1;
+    animation: $ani1;
+  }
+}
+
+body {
+  text-align: center;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $loaderSize;
+  height: $loaderSize;
+  margin-left: -$loaderSize/2;
+  margin-top: -$loaderSize/2;
+}
+
+.loader-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  opacity: 0;
+  width: $blockSize;
+  height: $blockSize;
+  background: $startingColor;
+  @include animation(show $duration step-end infinite alternate,
+    pulse $duration linear infinite alternate);
+}
+
+$cont: 1;
+
+@for $i from 0 through 7 {
+  @for $s from 0 through 7 {
+
+    .loader-block:nth-child(#{$cont}) {
+       @include translate(($blockSize + $blockMargin)*$s, ($blockSize + $blockMargin)*$i);
+      @include animation-delay(random(10) * $delay);
+      $cont : $cont +1
+    }
+  }
+}
+
+
+@-webkit-keyframes show {
+  from, 40% { opacity: 1; }
+  41%, to { opacity: 0; }
+}
+
+
+@keyframes show {
+  from, 40% { opacity: 1; }
+  41%, to { opacity: 0; }
+}
+
+
+/* Body styling */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @include background(#999 radial-gradient(circle farthest-side, #333, #111));
+}

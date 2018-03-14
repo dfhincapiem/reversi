@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Mina');
+
+
+.text{
+    font-family: 'Mina', sans-serif;
+    display: inline-block;
+    margin-top: 1%;
+    position: absolute;
+}
+
+
+.button {
+    margin-top: 30px;
+    display: inline-block;
+    margin-left: 15%;
+    padding: 0;
+    width: 250px;
+    height: 70px;
+    border: 2px solid #1ECD97;
+    border-radius: 40px;
+    background: transparent;
+    color: #1ECD97;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #1ECD97;
+    color: #fff;
+}
