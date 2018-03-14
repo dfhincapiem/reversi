@@ -9,16 +9,18 @@
     cursor : pointer;
     border-radius: 5%;
 
+
 }
 .CellAnimation{
 /*-webkit-animation: show2 1.88s step-end, pulse 0.88s linear infinite alternate;*/
-animation: show3 1.88s step-end, pulse 0.88s linear infinite alternate;
+background:#333;
+animation: show3 1.88s step-end reverse, pulse 0.88s linear infinite alternate;
 }
 
 .CellAnimation3{
   /*  -webkit-animation: show2 1.88s step-end , pulse 0.88s linear infinite alternate;*/
     background: rgb(0, 144, 0);
-    animation: show4 0.80s step-end, pulse 0.88s linear infinite alternate;;
+    animation: show4 1.88s step-end, pulse 0.88s linear infinite alternate;;
   }
     
 
