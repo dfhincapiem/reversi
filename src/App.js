@@ -15,7 +15,8 @@ class App extends Component {
           super();
 
           this.state = {
-            isLoaded: false
+            isLoaded: false,
+            items: {}
           };
       }
 
@@ -43,11 +44,12 @@ class App extends Component {
  
   
     })
-    .then(res => console.log(res.json()))
+    .then(res => res.json())
     .then(
       (result) => {
         this.setState({
           isLoaded: true,
+          items : result
 
         });
       },
@@ -60,21 +62,85 @@ class App extends Component {
     )
  }
 
+ resetCall(){
+
+  var self=this;
+
+  fetch('http://35.163.129.163:9000/reversi/game?token=d78b62e1-abea-4021-ac85-f5766b879bb5', { 
+    method: 'DELETE'
+  })
+  .then(function (response) {
+    self.refs.Board.resetAnimation()
+  })
+
+ }
+
+
+
+ movementCall(){
+  
+    var self=this;
+  
+    fetch('http://35.163.129.163:9000/reversi/game/movements?token=d78b62e1-abea-4021-ac85-f5766b879bb5&x=2&y=4', { 
+      method: 'POST'
+    })
+    .then(function (response) {
+    //  self.refs.Board.renderBoard();
+      //self.refs.Board.renderBoard();
+    })
+  
+  }
+  
+
+  updateCall(){
+    
+      var self=this;
+    
+      fetch('http://35.163.129.163:9000/reversi/game?token=d78b62e1-abea-4021-ac85-f5766b879bb5', { 
+        method: 'GET'
+      })
+      .then(function (response) {
+        self.refs.Board.resetAnimation()
+      })
+    
+     }
+    
+
+
+
+
+
+ renderComponents(){
+  if(this.state.isLoaded){
+  return(  
+    <div> 
+      <Board items={this.state.items} ref="Board" />
+      <ScoreCard  /> 
+      <ScoreCard />
+      {/* <ButtonBottom toChild={()=>this.refs.Board.resetAnimation()}/> */}
+      <ButtonBottom toChild={this.resetCall.bind(this)}/>
+
+    </div>);
+  }
+  else
+    return null;
+
+
+ }
+
 
 
   render() {
     const { isLoaded } = this.state;
     return (
       <div >
-       
-        <Board ref="Board" />
-        <ScoreCard />
-        <ScoreCard />
-        <ButtonBottom toChild={()=>this.refs.Board.resetAnimation()}/>
+        
+        {this.renderComponents()}
         <div className="loader-wrapper">
           <Loader loaded={isLoaded}>
           </Loader>
         </div>    
+        <button onClick={this.movementCall.bind(this)}>TEST</button>
       </div>
     );
   }

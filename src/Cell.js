@@ -40,12 +40,40 @@ class Cell extends Component {
     }
 
 
+    renderCell(){
+      if(this.props.cellPiece==="W"){
+        
+            return (
+              
+              <div className="White">
+              </div>
+            );
+      }
+      else if(this.props.cellPiece==="B") {
+        return (
+          
+          <div className="Black">
+          </div>
+        );
+
+      }
+      else {
+        return (
+          
+          <div className="">
+          </div>
+        );
+      }
+
+    }
+
+
   render() {
     
     return (
+      
       <div className="Cell CellAnimation" id={this.props.id}>
-        <div className="">
-        </div>
+      {this.renderCell()}
       </div>
     );
   }
