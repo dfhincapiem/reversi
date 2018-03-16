@@ -9,7 +9,6 @@ class Board extends Component {
 
   constructor(props){
     super(props);
-  
     this.renderBoard = this.renderBoard.bind(this);
     
   }
@@ -30,7 +29,7 @@ class Board extends Component {
 
 
   renderCell(){
-    
+   
     var idents =[];
      for(var i =0; i<8;i++){
         for(var k=0; k<8;k++){

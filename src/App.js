@@ -70,6 +70,7 @@ class App extends Component {
     method: 'DELETE'
   })
   .then(function (response) {
+    setTimeout(function(){ self.updateCallBoard(); }, 1300);
     self.refs.Board.resetAnimation()
   })
 
@@ -87,25 +88,46 @@ class App extends Component {
     .then(function (response) {
     //  self.refs.Board.renderBoard();
       //self.refs.Board.renderBoard();
+      self.updateCallBoard();
+   
     })
   
   }
   
 
-  updateCall(){
-    
-      var self=this;
-    
-      fetch('http://35.163.129.163:9000/reversi/game?token=d78b62e1-abea-4021-ac85-f5766b879bb5', { 
-        method: 'GET'
-      })
-      .then(function (response) {
-        self.refs.Board.resetAnimation()
-      })
-    
-     }
-    
+  updateCallBoard(){
 
+
+     const myHeaders = new Headers();
+     
+     myHeaders.append('Content-Type', 'application/json');
+     myHeaders.append('Authorization', 'token: d78b62e1-abea-4021-ac85-f5766b879bb5')
+     
+ 
+     fetch('http://35.163.129.163:9000/reversi/game?token=d78b62e1-abea-4021-ac85-f5766b879bb5', { 
+       method: 'GET', 
+       headers: myHeaders,
+  
+   
+     })
+     .then(res => res.json())
+     .then(
+       (result) => {
+         this.setState({
+           isLoaded: true,
+           items : result
+ 
+         });
+       },
+       (error) => {
+         this.setState({
+           isLoaded: true,
+           error
+         });
+       }
+     )
+    
+    }
 
 
 
