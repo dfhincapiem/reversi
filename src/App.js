@@ -76,8 +76,7 @@ class App extends Component {
     method: 'DELETE'
   })
   .then(function (response) {
-    setTimeout(function(){ self.updateCallBoard(); }, 1600);
-    self.refs.Board.resetAnimation()
+    self.updateCallBoardSpecialCase();
   })
 
  }
@@ -138,6 +137,45 @@ class App extends Component {
      )
     
     }
+
+    updateCallBoardSpecialCase(){
+      
+      
+           const myHeaders = new Headers();
+           
+           myHeaders.append('Content-Type', 'application/json');
+           myHeaders.append('Authorization', 'token: d78b62e1-abea-4021-ac85-f5766b879bb5')
+           
+           var self=this;
+       
+           fetch('http://35.163.129.163:9000/reversi/game?token=d78b62e1-abea-4021-ac85-f5766b879bb5', { 
+             method: 'GET', 
+             headers: myHeaders,
+        
+         
+           })
+           .then(res => res.json())
+           .then(
+             (result) => {
+           
+              setTimeout(function(){     self.setState({
+                isLoaded: true,
+                items : result
+      
+              }) }, 1600);
+              self.refs.Board.resetAnimation()
+               
+             },
+             (error) => {
+               this.setState({
+                 isLoaded: true,
+                 error
+               });
+             }
+           )
+          
+    }
+      
 
   
 
