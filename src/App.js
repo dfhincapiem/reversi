@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Board from './Board';
+import Title from './Title';
 import './App.css';
 import ButtonBottom from './ButtonBottom';
 
@@ -97,6 +98,12 @@ class App extends Component {
     .then(function (response) {
     //  self.refs.Board.renderBoard();
       //self.refs.Board.renderBoard();
+      if(response.status===400){
+        alert('MOVIMIENTO INVALIDO')
+      }
+      else if(response.status===409){
+        alert('JUEGO FINALIZADO')
+      }
       self.updateCallBoard();
    
     })
@@ -187,8 +194,8 @@ class App extends Component {
   return(  
     <div> 
       <Board movementCall={this.movementCall.bind(this)} items={this.state.items} ref="Board" >
-      <ScoreCard style={style.left} score={this.state.items.whiteCount} text={"White Count"}/> 
-      <ScoreCard style={style.right} score={this.state.items.blackCount} text={"Black Count"}/>
+        <ScoreCard style={style.left} score={this.state.items.whiteCount} text={"White Count"}/> 
+        <ScoreCard style={style.right} score={this.state.items.blackCount} text={"Black Count"}/>
       </Board>
       <ButtonBottom currentPlayer={this.state.items.currentPlayer} toChild={this.resetCall.bind(this)}/>
 
@@ -206,7 +213,7 @@ class App extends Component {
     const { isLoaded } = this.state;
     return (
       <div >
-        
+        <Title />
         {this.renderComponents()}
         <div className="loader-wrapper">
           <Loader loaded={isLoaded}>
