@@ -11,11 +11,10 @@ var request = require('request-promise');
 
 var style = {
   left: {
-    top: "150px",
     marginLeft : "-297px"
   },
   right: {
-    top: "150px",
+
     marginLeft : "60px",
     display : "inline"
   }
@@ -71,6 +70,7 @@ class App extends Component {
  resetCall(){
 
   var self=this;
+
 
   fetch('http://35.163.129.163:9000/reversi/game?token=d78b62e1-abea-4021-ac85-f5766b879bb5', { 
     method: 'DELETE'
