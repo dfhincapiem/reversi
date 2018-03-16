@@ -9,6 +9,19 @@ import ScoreCard from './ScoreCard';
 var Loader = require('react-loader');
 var request = require('request-promise');
 
+var style = {
+  left: {
+    top: "150px",
+    marginLeft : "-297px"
+  },
+  right: {
+    top: "150px",
+    marginLeft : "60px",
+    display : "inline"
+  }
+
+}
+
 
 class App extends Component {
       constructor() {
@@ -23,16 +36,6 @@ class App extends Component {
 
 
 
-      // toggleLoader() {
-      //   this.setState({ isLoaded: !this.state.isLoaded });
-      // }
-
-      // renderControl(isLoaded) {
-      //   let buttonText = isLoaded ? 'Show Loading Spinner' : 'Hide Loading Spinner';
-      //   return <button onClick={() => this.toggleLoader()}>{buttonText}</button>;
-      // }
-
-  
 
   componentDidMount(){
     const myHeaders = new Headers();
@@ -136,18 +139,20 @@ class App extends Component {
     
     }
 
+  
 
 
 
  renderComponents(){
+
   if(this.state.isLoaded){
   return(  
     <div> 
-      <Board movementCall={this.movementCall.bind(this)} items={this.state.items} ref="Board" />
-      <ScoreCard  /> 
-      <ScoreCard />
-      {/* <ButtonBottom toChild={()=>this.refs.Board.resetAnimation()}/> */}
-      <ButtonBottom toChild={this.resetCall.bind(this)}/>
+      <Board movementCall={this.movementCall.bind(this)} items={this.state.items} ref="Board" >
+      <ScoreCard style={style.left} score={this.state.items.whiteCount} text={"White Count"}/> 
+      <ScoreCard style={style.right} score={this.state.items.blackCount} text={"Black Count"}/>
+      </Board>
+      <ButtonBottom currentPlayer={this.state.items.currentPlayer} toChild={this.resetCall.bind(this)}/>
 
     </div>);
   }

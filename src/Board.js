@@ -44,6 +44,7 @@ class Board extends Component {
     return (
       <div className="Board">
         {this.renderCell()}
+        {this.props.children}
       </div>
     );
   }

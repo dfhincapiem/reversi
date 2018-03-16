@@ -17,7 +17,7 @@ class ButtonBottom extends Component {
   render() {
     return (
       <div >
-         <h1 className="text">White's <br/>Turn</h1>
+         <h1 className="text">{this.props.currentPlayer}'S <br/>TURN</h1>
         <button onClick={this.resetGame.bind(this)} className="button"><span>RESET</span></button>
        
       </div>
