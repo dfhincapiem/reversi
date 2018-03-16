@@ -1,0 +1,14 @@
+.Title {
+
+    height: 80px;
+    width: 80px;
+    display : inline-block;
+    background-color: #333;
+    margin-right: 40px;
+   
+    
+}
+.Title .textshadow{
+    font-size: 80px;
+    }
+

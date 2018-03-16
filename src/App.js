@@ -8,7 +8,6 @@ import ScoreCard from './ScoreCard';
 
 
 var Loader = require('react-loader');
-var request = require('request-promise');
 
 var style = {
   left: {

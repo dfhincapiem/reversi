@@ -10,6 +10,10 @@ import './ScoreCard.css';
 
 class ScoreCard extends Component {
 
+  componentDidMount(){
+    
+  }
+
 
   render() {
     return (
