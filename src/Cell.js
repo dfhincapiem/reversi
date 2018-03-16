@@ -68,11 +68,14 @@ class Cell extends Component {
     }
 
 
+
+
+
   render() {
     
     return (
       
-      <div className="Cell CellAnimation" id={this.props.id}>
+      <div onClick={this.props.movementCall.bind(this)} className="Cell CellAnimation" id={this.props.id}>
       {this.renderCell()}
       </div>
     );

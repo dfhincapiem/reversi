@@ -18,7 +18,10 @@ class App extends Component {
             isLoaded: false,
             items: {}
           };
+          
       }
+
+
 
       // toggleLoader() {
       //   this.setState({ isLoaded: !this.state.isLoaded });
@@ -70,7 +73,7 @@ class App extends Component {
     method: 'DELETE'
   })
   .then(function (response) {
-    setTimeout(function(){ self.updateCallBoard(); }, 1300);
+    setTimeout(function(){ self.updateCallBoard(); }, 1600);
     self.refs.Board.resetAnimation()
   })
 
@@ -78,11 +81,15 @@ class App extends Component {
 
 
 
- movementCall(){
+ movementCall(e){
   
+
+    
+    var API = 'http://35.163.129.163:9000/reversi/game/movements?token=d78b62e1-abea-4021-ac85-f5766b879bb5&x='+e.target.id[2]+'&y='+e.target.id[0];
+
     var self=this;
   
-    fetch('http://35.163.129.163:9000/reversi/game/movements?token=d78b62e1-abea-4021-ac85-f5766b879bb5&x=2&y=4', { 
+    fetch(API, { 
       method: 'POST'
     })
     .then(function (response) {
@@ -93,8 +100,8 @@ class App extends Component {
     })
   
   }
-  
 
+ 
   updateCallBoard(){
 
 
@@ -136,7 +143,7 @@ class App extends Component {
   if(this.state.isLoaded){
   return(  
     <div> 
-      <Board items={this.state.items} ref="Board" />
+      <Board movementCall={this.movementCall.bind(this)} items={this.state.items} ref="Board" />
       <ScoreCard  /> 
       <ScoreCard />
       {/* <ButtonBottom toChild={()=>this.refs.Board.resetAnimation()}/> */}
@@ -162,7 +169,6 @@ class App extends Component {
           <Loader loaded={isLoaded}>
           </Loader>
         </div>    
-        <button onClick={this.movementCall.bind(this)}>TEST</button>
       </div>
     );
   }
