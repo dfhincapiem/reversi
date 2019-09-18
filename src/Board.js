@@ -33,7 +33,7 @@ class Board extends Component {
      for(var i =0; i<8;i++){
         for(var k=0; k<8;k++){
        
-        idents.push(<Cell movementCall={this.props.movementCall} cellPiece={this.props.items.boardRows[i][k]} ref="Cell" renderBoard={this.renderBoard} key={i+"_"+k} id={i+"_"+k}></Cell>);
+        idents.push(<Cell movementCall={this.props.movementCall} cellPiece={this.props.items[i][k]} ref="Cell" renderBoard={this.renderBoard} key={i+"_"+k} id={i+"_"+k}></Cell>);
         }
     }
     return(idents)
@@ -51,3 +51,4 @@ class Board extends Component {
 }
 
 export default Board;
+  

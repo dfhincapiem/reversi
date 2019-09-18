@@ -75,8 +75,14 @@ class Cell extends Component {
     
     return (
       
-      <div onClick={this.props.movementCall.bind(this)} className="Cell CellAnimation" id={this.props.id}>
-      {this.renderCell()}
+      <div onClick={this.props.movementCall.bind(this)} className="flip-box Cell CellAnimation" id={this.props.id}>
+        <div className="flip-box-inner">
+          <div className="flip-box-front">
+          {this.renderCell()}
+          </div>
+          <div className="flip-box-back">
+          </div>
+        </div>
       </div>
     );
   }
